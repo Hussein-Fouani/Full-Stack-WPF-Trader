@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Trader.Domain.Models
 {
-    public class AssetTransactions
+    public class AssetTransactions: DomainObject
     {
-        public Guid Id { get; set; }
         public Account Account { get; set; }
         public Stock Stock { get; set; }
         public bool IsPurchased { get; set; }
