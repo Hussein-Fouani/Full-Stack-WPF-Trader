@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Trader.Domain.Models
 {
-    public class User
+    public class User: DomainObject
     {
-        public Guid Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
         public DateTime DateJoined { get; set; }
