@@ -12,8 +12,8 @@ using Trader.EF.Db;
 namespace Trader.EF.Migrations
 {
     [DbContext(typeof(TraderDbContext))]
-    [Migration("20240325121246_addMissingColumnstoUser")]
-    partial class addMissingColumnstoUser
+    [Migration("20240325123853_DbSetUp")]
+    partial class DbSetUp
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -74,6 +74,10 @@ namespace Trader.EF.Migrations
 
                     b.Property<DateTime>("DateJoined")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("DateProcessed")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
                         .IsRequired()
