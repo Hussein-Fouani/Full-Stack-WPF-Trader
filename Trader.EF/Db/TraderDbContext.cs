@@ -12,6 +12,10 @@ namespace Trader.EF.Db
 {
     public class TraderDbContext:DbContext
     {
+        public TraderDbContext(DbContextOptions options) : base(options)
+        {
+        }
+
         public DbSet<Account> Accounts { get; set; }
         public DbSet<AssetTransactions> AssetTransactions { get; set; }
         public DbSet<User> Users { get; set; }
@@ -21,11 +25,7 @@ namespace Trader.EF.Db
             modelBuilder.Entity<AssetTransactions>().OwnsOne(s=>s.Stock);
             base.OnModelCreating(modelBuilder);
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=.;Database=TraderDb;Trusted_Connection=True;TrustServerCertificate = True;");
-            base.OnConfiguring(optionsBuilder);
-        }
+       
     }
    
 }
