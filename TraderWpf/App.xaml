@@ -10,13 +10,13 @@
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Styles/Common.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-        </ResourceDictionary>
-        <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
-            <views:HomeView/>
-        </DataTemplate>
-        <DataTemplate DataType="{x:Type viewmodels:PortfolioViewModel}">
-            <views:PortfolioView/>
-        </DataTemplate>
 
+            <DataTemplate DataType="{x:Type viewmodels:HomeViewModel}">
+                <views:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewmodels:PortfolioViewModel}">
+                <views:PortfolioView/>
+            </DataTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
