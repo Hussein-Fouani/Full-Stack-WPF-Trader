@@ -12,17 +12,20 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="Trader" Background="{StaticResource ColorPrimary1Brush}" Foreground="White"/>
+        <TextBlock Grid.Row="0" Padding="10" FontSize="28" FontWeight="Bold" TextAlignment="Center" Text="Trader App" Background="{StaticResource ColorPrimary1Brush}" Foreground="White"/>
 
-        <Grid Grid.Row="1" Background="{StaticResource ColorPrimary2Brush}">
+        <Grid  Grid.Row="1" RenderOptions.EdgeMode="Aliased" Background="{StaticResource ColorPrimary2Brush}">
+            <Grid.Resources>
+                <Style TargetType="RadioButton" BasedOn="{StaticResource NavButtonStyle}" />
+            </Grid.Resources>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="auto"/>
-                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>    
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <RadioButton Grid.Column="0" Content="Home" Command="{Binding UpdateViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Home}" Foreground="Black"/>
+            <RadioButton  Grid.Column="0" Content="Home" Command="{Binding UpdateViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Home}" Foreground="Black"/>
             <RadioButton Grid.Column="1" Content="Portfolio" Command="{Binding UpdateViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Portfolio}" Foreground="Black"/>
             <RadioButton Grid.Column="2" Content="Buy" Command="{Binding UpdateViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Buy}" Foreground="Black"/>
             <RadioButton Grid.Column="3" Content="Sell" Foreground="Black"/>
