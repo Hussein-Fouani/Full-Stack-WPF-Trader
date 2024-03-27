@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Trader.API\Trader.API.csproj" />
     <ProjectReference Include="..\Trader.Domain\Trader.Domain.csproj" />
     <ProjectReference Include="..\Trader.EF\Trader.EF.csproj" />
   </ItemGroup>
