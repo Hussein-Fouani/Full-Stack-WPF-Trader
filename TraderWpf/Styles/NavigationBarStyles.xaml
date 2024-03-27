@@ -17,7 +17,7 @@
                     </Grid>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" Value="{StaticResource ColorPrimary1}" TargetName="gridMain" />
+                            <Setter Property="Background" Value="{StaticResource ColorPrimary1Brush}" TargetName="gridMain" />
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
