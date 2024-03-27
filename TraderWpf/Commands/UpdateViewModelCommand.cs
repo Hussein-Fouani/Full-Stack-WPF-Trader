@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Trader.API.Services;
+using Trader.Domain.Models;
 using TraderWpf.State.Navigators;
 using TraderWpf.ViewModels;
 using static TraderWpf.State.Navigators.INavigator;
@@ -32,7 +34,7 @@ namespace TraderWpf.Commands
                 ViewType viewType = (ViewType)parameter;
                 navigator.CurrentViewModel = viewType switch
                 {
-                    ViewType.Home => new HomeViewModel(),
+                    ViewType.Home => new HomeViewModel(MajorIndexViewModel.LoadViewModel(new MajorIndexService())),
                     ViewType.Portfolio => new PortfolioViewModel(),
                     ViewType.Buy => new BuyViewModel(),
                     _ => throw new NotImplementedException(),
