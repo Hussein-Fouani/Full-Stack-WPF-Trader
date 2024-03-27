@@ -3,7 +3,7 @@
 
     <Style x:Key="NavButtonStyle" TargetType="RadioButton">
         <Setter Property="Foreground" Value="White"/>
-        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Background" Value="{StaticResource ColorPrimary2Brush}"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0"/>
         <Setter Property="Padding" Value="10 5"/>
@@ -11,19 +11,25 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="RadioButton">
-                    <Grid Background="{TemplateBinding Background}">
+                    <Grid x:Name="gridMain" Background="{TemplateBinding Background}">
                         <TextBlock Text="{TemplateBinding Content}" Padding="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"/>
-                   
+
                     </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="{StaticResource ColorPrimary1}" TargetName="gridMain" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
+
         </Setter>
         <Style.Triggers>
             <EventTrigger RoutedEvent="MouseEnter">
                 <BeginStoryboard>
                     <Storyboard>
                         <ColorAnimation To="{StaticResource ColorPrimary1}" Duration="0:0:0.4"  Storyboard.TargetProperty="Background.Color"/>
-                        
+
                     </Storyboard>
                 </BeginStoryboard>
             </EventTrigger>
