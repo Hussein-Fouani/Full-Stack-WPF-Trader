@@ -47,7 +47,7 @@ namespace Trader.API.Services
             {
                 MajorIndexType.DowJones => ".DJI",
                 MajorIndexType.Nasdaq => ".IXIC",
-                MajorIndexType.SP500 => ".GSPC",
+                MajorIndexType.SP500 => ".INX",
                 _ => throw new Exception("Index type not supported"),
             };
         }
