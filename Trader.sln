@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trader.Domain", "Trader.Dom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Trader.EF", "Trader.EF\Trader.EF.csproj", "{4461C37F-41B1-44F1-9CD0-6B975BCF12B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TraderWpf", "TraderWpf\TraderWpf.csproj", "{323828B5-FBBB-4D30-A281-D3FDA260B59F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TraderWpf", "TraderWpf\TraderWpf.csproj", "{323828B5-FBBB-4D30-A281-D3FDA260B59F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trader.API", "Trader.API\Trader.API.csproj", "{91AE9FB1-B6E6-4B7F-8C91-FA34120D8CD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{323828B5-FBBB-4D30-A281-D3FDA260B59F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{323828B5-FBBB-4D30-A281-D3FDA260B59F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{323828B5-FBBB-4D30-A281-D3FDA260B59F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91AE9FB1-B6E6-4B7F-8C91-FA34120D8CD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91AE9FB1-B6E6-4B7F-8C91-FA34120D8CD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91AE9FB1-B6E6-4B7F-8C91-FA34120D8CD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91AE9FB1-B6E6-4B7F-8C91-FA34120D8CD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
