@@ -9,17 +9,42 @@ using Trader.Domain.Services;
 
 namespace TraderWpf.ViewModels
 {
-    public class MajorIndexViewModel
+    public class MajorIndexViewModel:ViewModelBase
     {
         private readonly IMajorIndex major;
 
+        private MajorIndex _dowJones;
         public MajorIndexViewModel(IMajorIndex major)
         {
             this.major = major;
         }
-        public MajorIndex DowJones { get; set; }
-        public MajorIndex Nasdaq { get; set; }
-        public MajorIndex SP500 { get; set; }
+        public MajorIndex DowJones {
+            get { return _dowJones; }
+            set
+            {
+                _dowJones = value;
+                OnPropertyChanged(nameof(DowJones));
+            }
+            }
+        public MajorIndex _nasdaq;
+        public MajorIndex Nasdaq {
+            get { return _nasdaq; }
+            set
+            {
+                _nasdaq = value;
+                OnPropertyChanged(nameof(Nasdaq));
+            }
+        }
+        public MajorIndex _SP500;
+        public MajorIndex SP500
+        {
+            get { return _SP500; }
+            set
+            {
+                _SP500 = value;
+                OnPropertyChanged(nameof(_SP500));
+            }
+        }
 
         public static MajorIndexViewModel LoadViewModel(IMajorIndex majorIndex)
         {
