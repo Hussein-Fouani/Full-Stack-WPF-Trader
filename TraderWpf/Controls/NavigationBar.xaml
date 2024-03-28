@@ -4,8 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:nav="clr-namespace:TraderWpf.State.Navigators"
+             xmlns:convert="clr-namespace:TraderWpf.Converts"
+             xmlns:vm="clr-namespace:TraderWpf.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <convert:EqualValuetoParameter x:Key="EqualValueToParameterConverter"/>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
@@ -25,10 +31,10 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <RadioButton  Grid.Column="0" Content="Home" Command="{Binding UpdateViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Home}" Foreground="Black"/>
-            <RadioButton Grid.Column="1" Content="Portfolio" Command="{Binding UpdateViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Portfolio}" Foreground="Black"/>
-            <RadioButton Grid.Column="2" Content="Buy" Command="{Binding UpdateViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Buy}" Foreground="Black"/>
-            <RadioButton Grid.Column="3" Content="Sell" Foreground="Black"/>
+            <RadioButton IsChecked="{Binding currentViewModel,Mode=OneWay,Converter={StaticResource EqualValueToParameterConverter} ,ConverterParameter={x:Type vm:HomeViewModel} }" Grid.Column="0" Content="Home" Command="{Binding UpdateViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Home}" Foreground="Black"/>
+            <RadioButton IsChecked="{Binding currentViewModel,Mode=OneWay,Converter={StaticResource EqualValueToParameterConverter} ,ConverterParameter={x:Type vm:PortfolioViewModel} }" Grid.Column="1" Content="Portfolio" Command="{Binding UpdateViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Portfolio}" Foreground="Black"/>
+            <RadioButton IsChecked="{Binding currentViewModel,Mode=OneWay,Converter={StaticResource EqualValueToParameterConverter} ,ConverterParameter={x:Type vm:HomeViewModel} }" Grid.Column="2" Content="Buy" Command="{Binding UpdateViewModelCommand}" CommandParameter="{x:Static nav:ViewType.Buy}" Foreground="Black"/>
+            <RadioButton IsChecked="{Binding currentViewModel,Mode=OneWay,Converter={StaticResource EqualValueToParameterConverter} ,ConverterParameter={x:Type vm:HomeViewModel} }" Grid.Column="3" Content="Sell" Foreground="Black"/>
         </Grid>
     </Grid>
 </UserControl>
