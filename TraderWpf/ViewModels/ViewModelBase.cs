@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TraderWpf.Models;
 
 namespace TraderWpf.ViewModels
 {
-    public class ViewModelBase
+    public class ViewModelBase: ObservableObject
     {
+
     }
 }
