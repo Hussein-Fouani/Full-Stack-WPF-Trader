@@ -9,10 +9,10 @@ namespace TraderWpf.ViewModels
 {
      public class HomeViewModel:ViewModelBase
     {
-        public MajorIndexViewModel viewModel { get; set; }
-        public HomeViewModel(MajorIndexViewModel viewModel)
+        public MajorIndexListingViewModel majorIndexListingViewModel { get; set; }
+        public HomeViewModel(MajorIndexListingViewModel viewModel)
         {
-            this.viewModel = viewModel;
+            this.majorIndexListingViewModel = viewModel;
         }
     }
 }
