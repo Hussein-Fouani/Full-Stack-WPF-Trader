@@ -13,7 +13,7 @@
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <TextBlock Text="Home"/>
-        <controls:MajorIndexCard Grid.Row="1" DataContext="{Binding MajorIndexViewModel.}"/>
+        <controls:MajorIndexListing Grid.Row="1" HorizontalAlignment="Center" DataContext="{Binding MajorIndexListingViewModel}"/>
 
     </Grid>
 </UserControl>

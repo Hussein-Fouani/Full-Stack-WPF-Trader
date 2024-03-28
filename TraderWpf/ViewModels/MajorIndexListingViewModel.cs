@@ -9,12 +9,12 @@ using Trader.Domain.Services;
 
 namespace TraderWpf.ViewModels
 {
-    public class MajorIndexViewModel:ViewModelBase
+    public class MajorIndexListingViewModel:ViewModelBase
     {
         private readonly IMajorIndex major;
 
         private MajorIndex _dowJones;
-        public MajorIndexViewModel(IMajorIndex major)
+        public MajorIndexListingViewModel(IMajorIndex major)
         {
             this.major = major;
         }
@@ -46,9 +46,9 @@ namespace TraderWpf.ViewModels
             }
         }
 
-        public static MajorIndexViewModel LoadViewModel(IMajorIndex majorIndex)
+        public static MajorIndexListingViewModel LoadViewModel(IMajorIndex majorIndex)
         {
-            MajorIndexViewModel model = new MajorIndexViewModel(majorIndex);
+            MajorIndexListingViewModel model = new MajorIndexListingViewModel(majorIndex);
             model.LoadMajorIndexes();
             return model;
         }
