@@ -34,7 +34,7 @@ namespace TraderWpf.Commands
                 ViewType viewType = (ViewType)parameter;
                 navigator.CurrentViewModel = viewType switch
                 {
-                    ViewType.Home => new HomeViewModel(MajorIndexViewModel.LoadViewModel(new MajorIndexService())),
+                    ViewType.Home => new HomeViewModel(MajorIndexListingViewModel.LoadViewModel(new MajorIndexService())),
                     ViewType.Portfolio => new PortfolioViewModel(),
                     ViewType.Buy => new BuyViewModel(),
                     _ => throw new NotImplementedException(),
