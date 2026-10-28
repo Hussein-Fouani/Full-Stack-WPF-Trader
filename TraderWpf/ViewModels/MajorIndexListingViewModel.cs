@@ -42,7 +42,7 @@ namespace TraderWpf.ViewModels
             set
             {
                 _SP500 = value;
-                OnPropertyChanged(nameof(_SP500));
+                OnPropertyChanged(nameof(SP500));
             }
         }
 
