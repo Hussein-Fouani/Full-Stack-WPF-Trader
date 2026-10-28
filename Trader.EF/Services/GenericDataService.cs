@@ -59,9 +59,8 @@ namespace Trader.EF.Services
             using (var dbs = db.CreateDbContext())
             {
                 entity.Id = id;
-                T existingEntity = await dbs.Set<T>().FirstOrDefaultAsync(e => e.Id == id);
 
-                var createdEntity = dbs.Set<T>().Update(existingEntity);
+                var createdEntity = dbs.Set<T>().Update(entity);
                 await dbs.SaveChangesAsync();
                 return entity;
             }
