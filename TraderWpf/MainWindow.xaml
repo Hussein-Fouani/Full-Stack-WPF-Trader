@@ -10,9 +10,10 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
             
         <controls:NavigationBar DataContext="{Binding Navigator}"/>
-        <ContentControl Content="{Binding  Navigator.CurrentViewModel}"/>
+        <ContentControl Grid.Row="1" Content="{Binding  Navigator.CurrentViewModel}"/>
     </Grid>
 </Window>
